@@ -23,7 +23,9 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                ls -la | grep "index.html"
+                cd build
+                ls -l | grep "index.html"
+                cd ..
                 npm test
                 '''
             }
